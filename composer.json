@@ -1,15 +1,15 @@
 {
   "name": "a-digi/autowire",
-  "description": "Autowire features",
-  "version": "1.0.0",
+  "description": "AriAva autowire component.",
   "authors": [
     {
       "name": "Andet Tafa",
       "email": "tafa.andet@googlemail.com"
     }
   ],
-  "type": "project",
-  "license": "MIT License",
+  "type": "library",
+  "version": "1.0.1",
+  "license": "MIT",
   "minimum-stability": "stable",
   "prefer-stable": false,
   "require": {
