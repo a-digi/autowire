@@ -1,0 +1,24 @@
+{
+  "name": "a-digi/autowire",
+  "description": "Autowire features",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Andet Tafa",
+      "email": "tafa.andet@googlemail.com"
+    }
+  ],
+  "type": "project",
+  "license": "MIT License",
+  "minimum-stability": "stable",
+  "prefer-stable": false,
+  "require": {
+    "php": ">=8.2",
+    "ext-ctype": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "AriAva\\Autowire\\": "src/"
+    }
+  }
+}
