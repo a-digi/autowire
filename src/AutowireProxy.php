@@ -2,12 +2,6 @@
 
 declare (strict_types=1);
 
-/*
- * This is AriAva Autowire
- *
- * (c) Andet Tafa <naderman@naderman.de>
- */
-
 namespace AriAva\Autowire;
 
 use ReflectionAttribute;

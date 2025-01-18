@@ -2,12 +2,6 @@
 
 declare(strict_types=1);
 
-$header = <<<EOF
-This is AriAva Autowire
-
-(c) Andet Tafa <naderman@naderman.de>
-EOF;
-
 $finder = PhpCsFixer\Finder::create()
     ->files()
     ->in(__DIR__.'/src')
@@ -21,7 +15,6 @@ return $config->setRules([
     'binary_operator_spaces' => true,
     'blank_line_before_statement' => ['statements' => ['declare', 'return']],
     'cast_spaces' => ['space' => 'single'],
-    'header_comment' => ['header' => $header],
     'include' => true,
     'class_attributes_separation' => ['elements' => ['method' => 'one', 'trait_import' => 'none']],
     'no_blank_lines_after_class_opening' => true,
