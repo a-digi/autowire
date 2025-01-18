@@ -2,3 +2,4 @@
 composer.lock
 .git/
 .idea/
+.php-cs-fixer.cache

@@ -1,23 +1,31 @@
 <?php
 
-declare (strict_types = 1);
+declare (strict_types=1);
+
+/*
+ * This is AriAva Autowire
+ *
+ * (c) Andet Tafa <naderman@naderman.de>
+ */
 
 namespace AriAva\Autowire;
 
 use ReflectionAttribute;
 use SplFileInfo;
 
-final readonly class AutowireProxy
+final class AutowireProxy
 {
     public string|null $namespace;
     private \ReflectionClass|null $reflection;
     /**
-     * @var array<int, ReflectionAttribute>|null
+     * @var array<int, ReflectionAttribute>
      */
-    private array|null $attributes;
+    private array $attributes = [];
 
-    public function __construct(private SplFileInfo $file, private string $instanceOf)
+    public function __construct(private readonly SplFileInfo $file, private readonly string $instanceOf)
     {
+        $this->namespace = null;
+        $this->reflection = null;
         $this->extractNamespace();
     }
 
@@ -72,10 +80,6 @@ final readonly class AutowireProxy
 
     private function hasAttributes(): bool
     {
-        if (null === $this->attributes) {
-            return false;
-        }
-
         if (0 === count($this->attributes)) {
             return false;
         }
@@ -92,7 +96,7 @@ final readonly class AutowireProxy
 
         try {
             $this->reflection = new \ReflectionClass($this->namespace);
-            $this->attributes = $this->reflection->getAttributes($this->instanceOf , ReflectionAttribute::IS_INSTANCEOF);
+            $this->attributes = $this->reflection->getAttributes($this->instanceOf, ReflectionAttribute::IS_INSTANCEOF);
 
             return count($this->attributes) > 0;
         } catch (\ReflectionException $e) {
